@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'react-bootstrap'
-// import './styles.less';
 
 export default props => (
   <div>

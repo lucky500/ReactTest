@@ -33,9 +33,16 @@ module.exports = {
         plugins: ['transform-object-rest-spread']
       }
     },
-      {
-        test: /\.less$/,
-        use: ExtractTextPlugin.extract({
+    {
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader']
+      })
+    },
+    {
+      test: /\.less$/,
+      use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'less-loader']
       })
