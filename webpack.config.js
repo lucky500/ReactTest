@@ -21,15 +21,7 @@ module.exports = {
     jquery: 'modules/jquery/dist/jquery.min.js',
     bootstrap: 'modules/bootstrap/dist/js/bootstrap.js'
   }
- },
- plugins: [
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    'window.jQuery': 'jquery'
-  }),
-  new ExtractTextPlugin('app.css')
- ],
+ }, 
  module: {
   rules: [
     {
@@ -42,18 +34,28 @@ module.exports = {
       }
     },
       {
-        test: /\.css$/,
+        test: /\.less$/,
         use: ExtractTextPlugin.extract({
-        // use: ['css-loader', 'sass-loader'],
-        // fallback: 'style-loader'
-        fallback: 'style-loader',
-        use: ['css-loader']
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
       })
     },
-      {
-        test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
-        use: ['file-loader']
-      }
-    ]
-  }
+    {
+      test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
+      use: ['file-loader']
+    }
+  ]
+},
+ plugins: [
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery'
+  }),
+  new ExtractTextPlugin({
+      filename: 'app.css',
+      disable: false,
+      allChunks: true
+    })
+ ]
 }

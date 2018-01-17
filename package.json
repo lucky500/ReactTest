@@ -25,6 +25,8 @@
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0",
     "jquery": "^1.11.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
