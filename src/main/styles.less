@@ -12,6 +12,31 @@
   background-color: @white;
 }*/
 
+html, body {
+  height: 100%;
+}
+
+#react-app {
+  height: 100vh;
+  .outer-wrapper {
+    min-height: 100%;
+  }
+}
+
+.outer-wrapper {
+  main {
+    min-height: 100vh;
+    background-color: #E6E6E6;
+    
+    .container {
+      background-color: #fff;
+      max-width: 96%;
+      min-height: 100vh;
+    }
+  }
+
+}
+
 /*====== Mixins =======*/
 @mobile: ~"only screen and (max-width: 529px)";
 
@@ -65,9 +90,16 @@
 }
 
 
-/*===== Results Banner ======*/
+/*===== Search Result Bar ======*/
 
-
+.search-result-bar {
+  background-color: #58ADD2;
+  color: #fff;
+  line-height: 1.5;
+  p {
+    line-height: .5;
+  }
+}
 
 
 /*===== Filter ======*/
