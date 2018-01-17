@@ -8,9 +8,12 @@
 
 
 /*====== Global =======*/
-body {
+/*body {
   background-color: @white;
-}
+}*/
+
+/*====== Mixins =======*/
+@mobile: ~"only screen and (max-width: 529px)";
 
 
 /*===== Buttons ======*/
@@ -33,6 +36,33 @@ body {
 
 /*===== Search ======*/
 
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  @media @mobile {
+    display: block;
+  }
+  .search {
+    width: 50%;
+    height: 50px;
+    @media @mobile {
+      width: 100%;
+    }
+  }
+
+  .gordon-toggle {
+    display: flex;
+    width: 50%;
+    @media @mobile {
+      width: 100%;
+    }
+    padding-left: 20px;
+  }
+}
+
+.gordon-toggle .fa-toggle-on {
+  padding-right: 10px;
+}
 
 
 /*===== Results Banner ======*/
