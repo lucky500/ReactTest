@@ -1,10 +1,17 @@
 import React from 'react';
-import { Button } from 'react-bootstrap'
+import { Grid, Col, Row, Button } from 'react-bootstrap';
+import Header from '../components/Header/Header';
 
 export default props => (
   <div>
-    <h3>Gordon Toogle</h3>
-    <Button bsStyle="success">Button</Button>
+    <Header />
+    <Grid>
+      <Row>
+        <Col xs={12}>
+          <Button bsStyle="success">Button</Button>
+        </Col>
+      </Row>
+    </Grid>
   </div>
 );
 
