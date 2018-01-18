@@ -8,7 +8,7 @@ class GordonToggle extends Component {
   render(){
     return(
       <div className="gordon-toggle">
-        <i className="fa fa-toggle-on fa-2x" aria-hidden="true"></i>
+        <i className="fa fa-toggle-on" aria-hidden="true"></i>
         <h3>Gordon ON</h3>
       </div>
     )

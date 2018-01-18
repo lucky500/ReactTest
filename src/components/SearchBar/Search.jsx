@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 class Search extends Component {
   constructor(props){
@@ -8,10 +8,17 @@ class Search extends Component {
 
   render(){
     return(
-      <InputGroup className="search">
-        <FormControl type="text" />
-        <InputGroup.Addon>Search</InputGroup.Addon>
-      </InputGroup>
+      <div>
+        <InputGroup>
+          <Input placeholder='Enter Search' />
+          <InputGroupAddon className='input-group-append'>
+            <span className='input-group-text'>
+              <i className="fa fa-search fa-lg fa-flip-horizontal"></i>
+            </span>
+          </InputGroupAddon>
+        </InputGroup>
+        
+      </div>
     )
   }
 }

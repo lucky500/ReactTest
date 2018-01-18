@@ -1,13 +1,11 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap'
+import { Navbar, NavbarBrand } from 'reactstrap'
 import Logo from '../../main/img/cirrus_logo.png';
 
 export default props =>(
   <Navbar>
-    <Navbar.Header>
-      <Navbar.Brand>
+    <NavbarBrand>
         <img src={Logo} alt="logo" className="logo" />
-      </Navbar.Brand>
-    </Navbar.Header>
+    </NavbarBrand>
   </Navbar>
 )

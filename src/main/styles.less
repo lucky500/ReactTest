@@ -1,5 +1,23 @@
+/*  
+  1. Variables
+  2. Colors
+  3. Global
+  4. Mixins
+  5. Buttons
+  5. Nav
+  6. Search
+  7. Search Results Bar
+  8. Filter
+  9. Search Results 
+  10.Bootstrap Overwrites
+*/
+
+
 /*===== Variables ======*/
 @white: white;
+@main_blue: #58ADD2;
+@main_gray: #E6E6E6;
+@bg_gray: #E6E6E6;
 
 
 /*====== Colors =======*/
@@ -26,7 +44,7 @@ html, body {
 .outer-wrapper {
   main {
     min-height: 100vh;
-    background-color: #E6E6E6;
+    background-color: @bg_gray;
     
     .container {
       background-color: #fff;
@@ -81,19 +99,24 @@ html, body {
     @media @mobile {
       width: 100%;
     }
-    padding-left: 20px;
+    padding-left: 50px;
   }
 }
 
 .gordon-toggle .fa-toggle-on {
   padding-right: 10px;
+  font-size: 3rem;
+  position: relative;
+  top: -7px;
+  color: #cbcbcb;
+  
 }
 
 
 /*===== Search Result Bar ======*/
 
 .search-result-bar {
-  background-color: #58ADD2;
+  background-color: @main_blue;
   color: #fff;
   line-height: 1.5;
   p {
@@ -104,6 +127,32 @@ html, body {
 
 /*===== Filter ======*/
 
+.filter {
+  span {
+    margin-right: 25px;
+  }
+}
 
 
 /*===== Search Results ======*/
+
+
+/*===== Bootstrap Overwrites =====*/
+
+.search-bar {
+  .form-control, .input-group-text {
+    border-radius: 1rem;
+  }
+
+  .input-group-text {
+    background-color: @main_blue;
+    border: 1px solid @main_blue;
+    color: #fff;
+  }
+
+  .form-control {
+    width: 350px;
+  }
+}
+
+
