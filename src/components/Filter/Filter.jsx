@@ -26,7 +26,7 @@ class Filter extends Component {
           toggle={this.toggle}
         >
           <DropdownToggle color="link" caret>
-            Link
+            Filter
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Header</DropdownItem>
