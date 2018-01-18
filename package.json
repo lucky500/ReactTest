@@ -39,6 +39,6 @@
   },
   "dependencies": {
     "react-bootstrap": "^0.32.0",
-    "reactstrap": "^4.8.0"
+    "reactstrap": "^5.0.0-alpha.4"
   }
 }

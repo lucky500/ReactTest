@@ -1,27 +1,45 @@
 import React, { Component } from 'react';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
 class Filter extends Component {
-
   constructor(props){
     super(props);
-    // this.state = {
-    //   defaultOpen: false
-    // }
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
   }
 
-  // onToggle() {
-  //   this.setState({
-  //     defaultOpen: !this.state.defaultOpen
-  //   });
-  // }
+  toggle(){
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
 
   render(){
     return(
-      <div className="filter px-3 py-3">
-          test
+      <div class="filter">
+        <Dropdown
+          isOpen={this.state.dropdownOpen} 
+          toggle={this.toggle}
+        >
+          <DropdownToggle color="link" caret>
+            Link
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem disabled>Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <span>Clear All</span>
+        <span>x Chosen Filter</span>
+        <span>x Chosen Filter</span>
       </div>
-    )
+    );
   }
 }
 
