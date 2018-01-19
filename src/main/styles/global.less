@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+}
+
+#react-app {
+  height: 100vh;
+  .outer-wrapper {
+    min-height: 100%;
+  }
+}
+
+.outer-wrapper {
+  main {
+    min-height: 100vh;
+    background-color: @bg_gray;
+    
+    .container {
+      background-color: #fff;
+      max-width: 96%;
+      min-height: 100vh;
+    }
+  }
+
+}
+
+/*===== Variables ======*/
+@white: white;
+@main_blue: #58ADD2;
+@main_gray: #E6E6E6;
+@bg_gray: #E6E6E6;
+
+
+/*====== Mixins =======*/
+@mobile: ~"only screen and (max-width: 529px)";
+
+
+
+
+
+
+
+

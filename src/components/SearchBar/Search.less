@@ -1,0 +1,46 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  @media @mobile {
+    display: block;
+  }
+  .search {
+    width: 50%;
+    height: 50px;
+    @media @mobile {
+      width: 100%;
+    }
+  }
+
+  .form-control, .input-group-text {
+    border-radius: 1rem;
+  }
+
+  .input-group-text {
+    background-color: @main_blue;
+    border: 1px solid @main_blue;
+    color: #fff;
+  }
+
+  .form-control {
+    width: 350px;
+  }
+
+  .gordon-toggle {
+    display: flex;
+    width: 50%;
+    @media @mobile {
+      width: 100%;
+    }
+    padding-left: 50px;
+  }
+}
+
+.gordon-toggle .fa-toggle-on {
+  padding-right: 10px;
+  font-size: 3rem;
+  position: relative;
+  top: -7px;
+  color: #cbcbcb;
+  
+}
