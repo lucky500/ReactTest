@@ -20,7 +20,7 @@ class Filter extends Component {
 
   render(){
     return(
-      <div class="filter">
+      <div className="filter">
         <Dropdown
           isOpen={this.state.dropdownOpen} 
           toggle={this.toggle}
