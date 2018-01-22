@@ -37,7 +37,10 @@ class App extends Component {
                 <Filter />
               </Col>
             </Row>
-            <ProductList products={this.props.products} /> 
+            <ProductList 
+              products={this.props.products} 
+              value={this.state.value}
+            /> 
           </Container>
         </main>
       </div>

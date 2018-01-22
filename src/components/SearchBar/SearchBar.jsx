@@ -4,11 +4,9 @@ import GordonToggle from './GordonToggle';
 
 export default props => (
   <div className="search-bar my-3 px-3">
-    <Search 
+    <Search
       handleChange={props.handleChange}
-      value={props.value}
-    />
-    {console.log(props)}
+      value={props.value} />
     <GordonToggle />
   </div>
 )
