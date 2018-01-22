@@ -22,9 +22,7 @@ class App extends Component {
                 <Filter />
               </Col>
             </Row>
-            <ProductList 
-              products={this.props.products}
-            /> 
+            <ProductList products={this.props.products} /> 
           </Container>
         </main>
       </div>

@@ -1,5 +1,5 @@
-{
-  "product": [
+
+  [
     {
       "id": 1,
       "image": "https://i.imgur.com/Dg6AE9d.png",
@@ -66,4 +66,3 @@
       "title": "Product 12"
     }
   ]
-}
