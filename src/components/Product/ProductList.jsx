@@ -15,7 +15,7 @@ class ProductList extends Component {
       <Container>
         <Row>
          {this.props.products.map(item => {
-            return <Product {...item} key={item.id} />
+            return <Product {...item} key={item.id}/>
          })}
         </Row>
       </Container>

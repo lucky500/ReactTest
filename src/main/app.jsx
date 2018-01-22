@@ -9,6 +9,16 @@ import ProductList from '../components/Product/ProductList';
 
 class App extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = { value: '' }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    this.setState({ value: event.target.value })
+  }
+
   render(){
     return(
       <div className="outer-wrapper">
@@ -17,8 +27,13 @@ class App extends Component {
           <Container>
             <Row>
               <Col xs={12} md={12} lg={12} className="pl-0 pr-0">
-                <SearchBar />
-                <SearchResultBar />
+                <SearchBar 
+                  handleChange={this.handleChange}
+                  value={this.state.value}
+                />
+                <SearchResultBar 
+                  value={this.state.value}
+                />
                 <Filter />
               </Col>
             </Row>
