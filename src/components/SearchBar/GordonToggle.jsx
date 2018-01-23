@@ -3,25 +3,25 @@ import React, { Component } from 'react';
 class GordonToggle extends Component {
   constructor(props){
     super(props);
-    this.state = { on: false }
-    this.handleToggle = this.handleToggle.bind(this);
+    // this.state = { toggleOn: false }
+    // this.handleToggle = this.handleToggle.bind(this);
   }
 
-  handleToggle(){
-    this.setState({ 
-      on: !this.state.on
-    });
-  }
+  // handleToggle(){
+  //   this.setState({ 
+  //     toggleOn: !this.state.toggleOn
+  //   });
+  // }
 
   render(){
-    console.log(this.state.on);
+    console.log(this.props.toggleOn);
     return(
       <div className="gordon-toggle">
           <label className="switch">
             <input type="checkbox" />
-            <span className="slider round" onClick={this.handleToggle}></span>
+            <span className="slider round" onClick={this.props.handleToggle}></span>
           </label>
-          <h3>Gordon { this.state.on ? 'ON' : 'OFF' }</h3>
+          <h3>Gordon { this.props.toggleOn ? 'ON' : 'OFF' }</h3>
       </div>
     )
   }

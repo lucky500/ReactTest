@@ -7,6 +7,8 @@ export default props => (
     <Search
       handleChange={props.handleChange}
       value={props.value} />
-    <GordonToggle />
+    <GordonToggle 
+      handleToggle={props.handleToggle}
+      toggleOn={props.toggleOn} />
   </div>
 )
