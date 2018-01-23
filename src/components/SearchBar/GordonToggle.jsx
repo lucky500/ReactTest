@@ -17,10 +17,11 @@ class GordonToggle extends Component {
     console.log(this.state.on);
     return(
       <div className="gordon-toggle">
-          <i className="fa fa-toggle-on" aria-hidden="true"
-            onClick={this.handleToggle}>
-          </i>
-          <h3>Gordon ON</h3>
+          <label className="switch">
+            <input type="checkbox" />
+            <span className="slider round" onClick={this.handleToggle}></span>
+          </label>
+          <h3>Gordon { this.state.on ? 'ON' : 'OFF' }</h3>
       </div>
     )
   }
