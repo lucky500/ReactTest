@@ -11,8 +11,7 @@ class ProductList extends Component {
 
 
   render(){
-    {console.log('on products:', this.props.value)}
-    {console.log(this.props.list)}
+    {console.log('list:', this.props.list)}
     // let filteredSearch = this.props.products.filter(
     //   (product) => {
     //     return product.title.indexOf(this.props.value) !== -1;

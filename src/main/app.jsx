@@ -8,8 +8,8 @@ import SearchResultBar from '../components/SearchResultBar/SearchResultBar';
 import Filter from '../components/Filter/Filter';
 import ProductList from '../components/Product/ProductList';
 
-const URL  = 'http://localhost:3035/api/products';
 
+const URL  = 'http://localhost:3035/api/products';
 
 class App extends Component {
 
@@ -30,7 +30,7 @@ class App extends Component {
 
 
   handleChange(event){
-    this.setState({ value: event.target.value })
+    this.setState({ ...this.state, value: event.target.value })
   }
 
   handleToggle(){
@@ -41,12 +41,11 @@ class App extends Component {
 
   refresh(value=''){
     const search = value ? `&title__regex=/${value}/` : '';
-    axios.get(`${URL}/${search}`)
+    axios.get(`${URL}${search}`)
       .then(response => this.setState({...this.state, value, list: response.data}));
   }
 
   handleSearch(product){
-    console.log('list here:', this.state.list);
     this.refresh();
   }
 

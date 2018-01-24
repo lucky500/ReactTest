@@ -3,15 +3,8 @@ import React, { Component } from 'react';
 class GordonToggle extends Component {
   constructor(props){
     super(props);
-    // this.state = { toggleOn: false }
-    // this.handleToggle = this.handleToggle.bind(this);
   }
 
-  // handleToggle(){
-  //   this.setState({ 
-  //     toggleOn: !this.state.toggleOn
-  //   });
-  // }
 
   render(){
     console.log(this.props.toggleOn);
