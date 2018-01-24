@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Col, Row, Button } from 'reactstrap';
+import axios from 'axios';
+
 import Header from '../components/Header/Header';
 import SearchBar from '../components/SearchBar/SearchBar';
 import SearchResultBar from '../components/SearchResultBar/SearchResultBar';
 import Filter from '../components/Filter/Filter';
 import ProductList from '../components/Product/ProductList';
-// import Data from '../data/data.json';
+
+const URL  = 'http://localhost:3035/api/products';
+
 
 class App extends Component {
 
@@ -13,11 +17,13 @@ class App extends Component {
     super(props);
     this.state = { 
       value: '',
-      toggleOn: false 
+      toggleOn: false, 
+      list: []
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleChange(event){
@@ -30,6 +36,24 @@ class App extends Component {
     });
   }
 
+  handleSearch(product){
+    axios.get(`${URL}/${product._id}`)
+      .then((response) => {
+        console.log('onHandleSearch:', response);
+      });
+  }
+
+
+  componentDidMount(){
+    axios.get(URL)
+      .then((response) => {
+         console.log(response.data);
+      }).catch((error) => {
+         console.log(error.response.data);
+    });
+  }
+
+
   render(){
     return(
       <div className="outer-wrapper">
@@ -41,6 +65,7 @@ class App extends Component {
                 <SearchBar 
                   handleChange={this.handleChange}
                   handleToggle={this.handleToggle}
+                  handleSearch={this.handleSearch}
                   value={this.state.value}
                   toggleOn={this.state.toggleOn}
                 />

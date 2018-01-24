@@ -14,7 +14,8 @@ class Search extends Component {
             onChange={this.props.handleChange}
             value={this.props.search}
             />
-          <InputGroupAddon className='input-group-append'>
+          <InputGroupAddon className='input-group-append'
+            onClick={this.props.handleSearch}>
             <span className='input-group-text'>
               <i className="fa fa-search fa-lg fa-flip-horizontal"></i>
             </span>
