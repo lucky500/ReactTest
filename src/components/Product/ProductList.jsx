@@ -12,17 +12,18 @@ class ProductList extends Component {
 
   render(){
     {console.log('on products:', this.props.value)}
-    let filteredSearch = this.props.products.filter(
-      (product) => {
-        return product.title.indexOf(this.props.value) !== -1;
-      }
-    )
+    {console.log(this.props.list)}
+    // let filteredSearch = this.props.products.filter(
+    //   (product) => {
+    //     return product.title.indexOf(this.props.value) !== -1;
+    //   }
+    // )
     return(
       <Container>
         <Row>
-         {filteredSearch.map(item => {
+         {/*{filteredSearch.map(item => {
             return <Product {...item} key={item.id}/>
-         })}
+         })}*/}
         </Row>
       </Container>
     );

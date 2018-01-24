@@ -39,25 +39,26 @@ class App extends Component {
     });
   }
 
-  refresh(title=''){
-    const search = title ? `&title__regex=/${title}/` : '';
+  refresh(value=''){
+    const search = value ? `&title__regex=/${value}/` : '';
     axios.get(`${URL}/${search}`)
-      .then(response => console.log('onRefresh', response));
+      .then(response => this.setState({...this.state, value, list: response.data}));
   }
 
   handleSearch(product){
+    console.log('list here:', this.state.list);
     this.refresh();
   }
 
 
-  componentDidMount(){
-    axios.get(URL)
-      .then((response) => {
-         console.log(response.data);
-      }).catch((error) => {
-         console.log(error.response.data);
-    });
-  }
+  // componentDidMount(){
+  //   axios.get(URL)
+  //     .then((response) => {
+  //        console.log(response.data);
+  //     }).catch((error) => {
+  //        console.log(error.response.data);
+  //   });
+  // }
 
 
   render(){
@@ -82,8 +83,8 @@ class App extends Component {
               </Col>
             </Row>
             <ProductList 
-              products={this.props.products} 
               value={this.state.value}
+              list={this.state.list}
             /> 
           </Container>
         </main>

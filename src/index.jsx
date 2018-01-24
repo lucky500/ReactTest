@@ -10,4 +10,4 @@ import App from './main/app';
 
 
 
-ReactDOM.render(<App products={products} />, document.getElementById('react-app'));
+ReactDOM.render(<App />, document.getElementById('react-app'));
