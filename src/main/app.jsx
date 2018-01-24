@@ -24,7 +24,10 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+
+    this.refresh();
   }
+
 
   handleChange(event){
     this.setState({ value: event.target.value })
@@ -36,11 +39,14 @@ class App extends Component {
     });
   }
 
+  refresh(title=''){
+    const search = title ? `&title__regex=/${title}/` : '';
+    axios.get(`${URL}/${search}`)
+      .then(response => console.log('onRefresh', response));
+  }
+
   handleSearch(product){
-    axios.get(`${URL}/${product._id}`)
-      .then((response) => {
-        console.log('onHandleSearch:', response);
-      });
+    this.refresh();
   }
 
 
