@@ -40,29 +40,15 @@ class App extends Component {
   }
 
   refresh(value=''){
-    const search = value ? `?&title__regex=/${value}/` : '';
+    const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
     axios.get(`${URL}${search}`)
       .then(response => this.setState({...this.state, value, list: response.data}));
   }
 
-  // refresh(){
-  //   axios.get(`${URL}`)
-  //     .then(resp => this.setState({...this.state, value: '', list: resp.data}));
-  // }
 
-  handleSearch(product){
+  handleSearch(){
     this.refresh(this.state.value);
   }
-
-
-  // componentDidMount(){
-  //   axios.get(URL)
-  //     .then((response) => {
-  //        console.log(response.data);
-  //     }).catch((error) => {
-  //        console.log(error.response.data);
-  //   });
-  // }
 
 
   render(){
