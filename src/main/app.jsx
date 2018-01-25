@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import Header from '../components/Header/Header';
 import SearchBar from '../components/SearchBar/SearchBar';
-import SearchResultBar from '../components/SearchResultBar/SearchResultBar';
 import Filter from '../components/Filter/Filter';
 import ProductList from '../components/Product/ProductList';
 
@@ -18,12 +17,15 @@ class App extends Component {
     this.state = { 
       value: '',
       toggleOn: false, 
-      list: []
+      list: [],
+      isHidden: true
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.resultsBarHidden = this.resultsBarHidden.bind(this);
+    // this.click = this.click.bind(this);
 
     
   }
@@ -39,6 +41,13 @@ class App extends Component {
     });
   }
 
+  // hide blue results bar before search
+  resultsBarHidden(){
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+
   refresh(value=''){
     const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
     axios.get(`${URL}${search}`)
@@ -49,6 +58,12 @@ class App extends Component {
   handleSearch(){
     this.refresh(this.state.value);
   }
+
+  // click(){
+  //   this.handleSearch();
+  //   this.resultsBarHidden();
+  //   this.props.onClick();
+  // }
 
 
   render(){
@@ -63,13 +78,10 @@ class App extends Component {
                   handleChange={this.handleChange}
                   handleToggle={this.handleToggle}
                   handleSearch={this.handleSearch}
+                  resultsBarHidden={this.resultsBarHidden}
                   value={this.state.value}
                   toggleOn={this.state.toggleOn}
                 />
-                <SearchResultBar 
-                  value={this.state.value}
-                />
-                <Filter />
               </Col>
             </Row>
             <ProductList 

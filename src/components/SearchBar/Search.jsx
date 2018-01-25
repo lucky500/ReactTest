@@ -6,6 +6,13 @@ class Search extends Component {
     super(props);
   }
 
+   onClick() {
+      
+    this.handleSearch();
+    this.resultsBarHidden();
+      
+   }
+
   render(){
     return(
       <div className="search-input">
