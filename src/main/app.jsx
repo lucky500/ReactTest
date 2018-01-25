@@ -24,8 +24,6 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    //this.resultsBarHidden = this.resultsBarHidden.bind(this);
-    // this.click = this.click.bind(this);
 
     
   }
@@ -41,17 +39,6 @@ class App extends Component {
     });
   }
 
-  // onClick(){
-  //   this.refresh(this.state.value);
-  //   isHidden: !this.state.isHidden
-  // }
-
-  // hide blue results bar before search
-  // resultsBarHidden(){
-  //   this.setState({
-  //     isHidden: !this.state.isHidden
-  //   })
-  // }
 
   refresh(value=''){
     const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
@@ -66,12 +53,6 @@ class App extends Component {
       isHidden: !this.state.isHidden
     })
   }
-
-  // click(){
-  //   this.handleSearch();
-  //   this.resultsBarHidden();
-  //   this.props.onClick();
-  // }
 
 
   render(){
@@ -94,9 +75,7 @@ class App extends Component {
               </Col>
             </Row>
             <ProductList         
-              list={this.state.list} 
-              value={this.state.value} 
-              isHidden={this.state.isHidden} /> 
+              list={this.state.list} /> 
           </Container>
         </main>
       </div>
