@@ -11,7 +11,11 @@ class ProductList extends Component {
 
 
   render(){
-    {console.log('list:', this.props.list)}
+    // let filteredSearch = this.props.list.filter(
+    //   (product) => {
+    //     return product.title.indexOf(this.props.value) !== -1
+    //   }
+    // )
     // let filteredSearch = this.props.products.filter(
     //   (product) => {
     //     return product.title.indexOf(this.props.value) !== -1;
@@ -20,6 +24,11 @@ class ProductList extends Component {
     return(
       <Container>
         <Row>
+          {
+            this.props.list.map(item => {
+              return <Product {...item} key={item._id} />
+            })
+          }
          {/*{filteredSearch.map(item => {
             return <Product {...item} key={item.id}/>
          })}*/}

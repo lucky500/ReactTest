@@ -25,7 +25,7 @@ class App extends Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
 
-    this.refresh();
+    
   }
 
 
@@ -40,13 +40,18 @@ class App extends Component {
   }
 
   refresh(value=''){
-    const search = value ? `&title__regex=/${value}/` : '';
+    const search = value ? `?&title__regex=/${value}/` : '';
     axios.get(`${URL}${search}`)
       .then(response => this.setState({...this.state, value, list: response.data}));
   }
 
+  // refresh(){
+  //   axios.get(`${URL}`)
+  //     .then(resp => this.setState({...this.state, value: '', list: resp.data}));
+  // }
+
   handleSearch(product){
-    this.refresh();
+    this.refresh(this.state.value);
   }
 
 
@@ -82,7 +87,7 @@ class App extends Component {
               </Col>
             </Row>
             <ProductList 
-              value={this.state.value}
+        
               list={this.state.list}
             /> 
           </Container>
