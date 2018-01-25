@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Product from './Product';
 import { Row, Container } from 'reactstrap';
+
+import Product from './Product';
+import SearchResultBar from '../SearchResultBar/SearchResultBar';
 
 class ProductList extends Component {
   constructor(props){
@@ -11,29 +13,22 @@ class ProductList extends Component {
 
 
   render(){
-    // let filteredSearch = this.props.list.filter(
-    //   (product) => {
-    //     return product.title.indexOf(this.props.value) !== -1
-    //   }
-    // )
-    // let filteredSearch = this.props.products.filter(
-    //   (product) => {
-    //     return product.title.indexOf(this.props.value) !== -1;
-    //   }
-    // )
+    { console.log('isHidden:', this.props.isHidden) }
     return(
-      <Container>
-        <Row>
-          {
-            this.props.list.map(item => {
-              return <Product {...item} key={item._id} />
-            })
-          }
-         {/*{filteredSearch.map(item => {
-            return <Product {...item} key={item.id}/>
-         })}*/}
-        </Row>
-      </Container>
+      <div>
+        {!this.props.isHidden ?
+          <SearchResultBar 
+          value={this.props.value} /> : null }
+        <Container>
+          <Row>
+            {
+              this.props.list.map(item => {
+                return <Product {...item} key={item._id} />
+              })
+            }
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

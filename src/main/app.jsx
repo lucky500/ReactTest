@@ -24,7 +24,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    this.resultsBarHidden = this.resultsBarHidden.bind(this);
+    //this.resultsBarHidden = this.resultsBarHidden.bind(this);
     // this.click = this.click.bind(this);
 
     
@@ -37,16 +37,21 @@ class App extends Component {
 
   handleToggle(){
     this.setState({ 
-      toggleOn: !this.state.toggleOn
+      toggleOn: !this.state.toggleOn,
     });
   }
 
+  // onClick(){
+  //   this.refresh(this.state.value);
+  //   isHidden: !this.state.isHidden
+  // }
+
   // hide blue results bar before search
-  resultsBarHidden(){
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
-  }
+  // resultsBarHidden(){
+  //   this.setState({
+  //     isHidden: !this.state.isHidden
+  //   })
+  // }
 
   refresh(value=''){
     const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
@@ -57,6 +62,9 @@ class App extends Component {
 
   handleSearch(){
     this.refresh(this.state.value);
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
   }
 
   // click(){
@@ -78,16 +86,17 @@ class App extends Component {
                   handleChange={this.handleChange}
                   handleToggle={this.handleToggle}
                   handleSearch={this.handleSearch}
-                  resultsBarHidden={this.resultsBarHidden}
+                  
                   value={this.state.value}
                   toggleOn={this.state.toggleOn}
+                  isHidden={this.state.isHidden}
                 />
               </Col>
             </Row>
-            <ProductList 
-        
-              list={this.state.list}
-            /> 
+            <ProductList         
+              list={this.state.list} 
+              value={this.state.value} 
+              isHidden={this.state.isHidden} /> 
           </Container>
         </main>
       </div>
