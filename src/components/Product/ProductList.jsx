@@ -10,12 +10,12 @@ class ProductList extends Component {
   }
 
   render(){
-    const { isHidden, term, list } = this.props
+    const { hideResultsBar, term, list } = this.props
 
     return(
       <div>
          {
-           isHidden ? null : <SearchResultBar term={term} />
+           hideResultsBar ? null : <SearchResultBar term={term} />
          }
         <Row className="mt-3">
           {

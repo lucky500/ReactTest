@@ -49,9 +49,9 @@ class App extends Component {
     this.fetchProducts(this.state.value);
 
     // Will always be visible after first search
-    if(this.state.isHidden) {
+    if(this.state.hideResultsBar) {
       this.setState({
-        isHidden: false
+        hideResultsBar: false
       })
     }
   }
