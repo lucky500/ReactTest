@@ -9,7 +9,7 @@ import ProductList from '../components/Product/ProductList';
 
 
 const URL  = 'http://localhost:3035/api/products';
-//const URL  = 'http://localhost:8091/search-service/v1/';
+const testURL = 'http://localhost:8080/'
 
 class App extends Component {
 
@@ -40,11 +40,11 @@ class App extends Component {
 
 
   refresh(value=''){
-    //const search = value ? `search?q=${value}&num=40&gordon=${this.state.toggleOn}&clientId=Kohls` : '';
-    const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
-    axios.get(`${URL}${search}`)
+    // const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
+
+    //added this, just so you can see the data.
+    axios.get(`${testURL}${products}`)
       .then(response => this.setState({...this.state, value, list: response.data}));
-      //.then(response => console.log(response.data.results));
   }
 
 
