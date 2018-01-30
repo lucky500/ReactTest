@@ -10,7 +10,6 @@ import Data from '../../public/data.json'
 
 
 const URL  = 'http://localhost:3035/api/products';
-const testURL = 'http://localhost:8080/'
 
 class App extends Component {
 
@@ -45,9 +44,8 @@ class App extends Component {
 
     //added this, just so you can see the data.
     axios.get('../../data.json')
-      .then(response => console.log(response.data));
+      .then(response => this.setState({...this.state, value, list: response.data}));
   }
-
 
   handleSearch(){
     this.refresh(this.state.value);
