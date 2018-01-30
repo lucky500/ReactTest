@@ -21,7 +21,7 @@ module.exports = {
     jquery: 'modules/jquery/dist/jquery.min.js',
     bootstrap: 'modules/bootstrap/dist/js/bootstrap.js'
   }
- }, 
+ },
  module: {
   rules: [
     {
@@ -30,7 +30,7 @@ module.exports = {
       exclude: /node_modules/,
       query: {
         presets: ['es2015', 'stage-0', 'react'],
-        plugins: ['transform-object-rest-spread']
+        plugins: ['transform-object-rest-spread', 'transform-class-properties']
       }
     },
     {
