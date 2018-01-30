@@ -6,6 +6,7 @@ import Header from '../components/Header/Header';
 import SearchBar from '../components/SearchBar/SearchBar';
 import Filter from '../components/Filter/Filter';
 import ProductList from '../components/Product/ProductList';
+import Data from '../../public/data.json'
 
 
 const URL  = 'http://localhost:3035/api/products';
@@ -43,8 +44,8 @@ class App extends Component {
     // const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
 
     //added this, just so you can see the data.
-    axios.get(`${testURL}${products}`)
-      .then(response => this.setState({...this.state, value, list: response.data}));
+    axios.get('../../data.json')
+      .then(response => console.log(response.data));
   }
 
 
@@ -77,7 +78,8 @@ class App extends Component {
             <ProductList         
               list={this.state.list} 
               value={this.state.value}
-              isHidden={this.state.isHidden} /> 
+              isHidden={this.state.isHidden} 
+            /> 
           </Container>
         </main>
       </div>
