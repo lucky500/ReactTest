@@ -10,14 +10,16 @@ class ProductList extends Component {
   }
 
   render(){
+    const { hideResultsBar, term, list } = this.props
+
     return(
       <div>
-         {!this.props.isHidden ? 
-            <SearchResultBar 
-            value={this.props.value} /> : null }
+         {
+           hideResultsBar ? null : <SearchResultBar term={term} />
+         }
         <Row className="mt-3">
           {
-            this.props.list.map(item => {
+            list.map(item => {
               return <Product {...item} key={item.id} />
             })
           }

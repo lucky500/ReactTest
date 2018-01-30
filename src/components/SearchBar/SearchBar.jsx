@@ -9,14 +9,14 @@ export default props => (
       <Search
         handleChange={props.handleChange}
         handleSearch={props.handleSearch}
-        
+
         value={props.value} />
-      <GordonToggle 
+      <GordonToggle
         handleToggle={props.handleToggle}
         toggleOn={props.toggleOn} />
     </div>
    {/* {!props.isHidden ? 
-      <SearchResultBar 
+      <SearchResultBar
       value={props.value} /> : null }*/}
   </section>
 )
