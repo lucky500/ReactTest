@@ -9,6 +9,7 @@ import ProductList from '../components/Product/ProductList';
 
 
 const URL  = 'http://localhost:3035/api/products';
+//const URL  = 'http://localhost:8091/search-service/v1/';
 
 class App extends Component {
 
@@ -23,9 +24,7 @@ class App extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-
-    
+    this.handleSearch = this.handleSearch.bind(this);   
   }
 
 
@@ -41,9 +40,11 @@ class App extends Component {
 
 
   refresh(value=''){
+    //const search = value ? `search?q=${value}&num=40&gordon=${this.state.toggleOn}&clientId=Kohls` : '';
     const search = value ? `?&title__regex=/${value}/&gordonToggle=${this.state.toggleOn}` : '';
     axios.get(`${URL}${search}`)
       .then(response => this.setState({...this.state, value, list: response.data}));
+      //.then(response => console.log(response.data.results));
   }
 
 
@@ -66,16 +67,17 @@ class App extends Component {
                 <SearchBar 
                   handleChange={this.handleChange}
                   handleToggle={this.handleToggle}
-                  handleSearch={this.handleSearch}
-                  
+                  handleSearch={this.handleSearch}              
                   value={this.state.value}
                   toggleOn={this.state.toggleOn}
-                  isHidden={this.state.isHidden}
+            
                 />
               </Col>
             </Row>
             <ProductList         
-              list={this.state.list} /> 
+              list={this.state.list} 
+              value={this.state.value}
+              isHidden={this.state.isHidden} /> 
           </Container>
         </main>
       </div>

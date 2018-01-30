@@ -12,8 +12,7 @@ class Search extends Component {
         <InputGroup>
           <Input placeholder='Enter Search' 
             onChange={this.props.handleChange}
-            value={this.props.value}
-            />
+            value={this.props.value} />
           <InputGroupAddon className='input-group-append'
             onClick={this.props.handleSearch}>
             <span className='input-group-text'>

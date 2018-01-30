@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import './SearchResultBar.less';
-
 
 class SearchResultBar extends Component {
   render(){

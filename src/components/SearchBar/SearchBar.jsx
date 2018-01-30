@@ -15,8 +15,8 @@ export default props => (
         handleToggle={props.handleToggle}
         toggleOn={props.toggleOn} />
     </div>
-    {!props.isHidden ? 
+   {/* {!props.isHidden ? 
       <SearchResultBar 
-      value={props.value} /> : null }
+      value={props.value} /> : null }*/}
   </section>
 )
